@@ -1,0 +1,820 @@
+@custom-variant dark (&:is(.dark *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --input-background: oklch(0.205 0 0);
+  --switch-background: oklch(0.439 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Улучшения для Obsidian-стиля ссылок */
+.obsidian-link {
+  transition: all 0.2s ease;
+  border-radius: 3px;
+  padding: 1px 3px;
+  text-decoration: none;
+}
+
+.obsidian-link:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Стили для заголовков в стиле Obsidian */
+.obsidian-header {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.obsidian-header:hover .hash-symbols {
+  opacity: 1;
+}
+
+.obsidian-header .hash-symbols {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  font-family: 'Courier New', monospace;
+  font-weight: normal;
+  user-select: none;
+}
+
+/* Улучшенная видимость символов # в темной теме */
+.dark .obsidian-header .hash-symbols {
+  opacity: 0.7;
+}
+
+.dark .obsidian-header:hover .hash-symbols {
+  opacity: 0.9;
+}
+
+.internal-link {
+  position: relative;
+}
+
+.internal-link::before {
+  content: "🔗";
+  opacity: 0;
+  margin-right: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.internal-link:hover::before {
+  opacity: 0.6;
+}
+
+/* Плавная прокрутка для якорных ссылок */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Анимация подсветки для целевых заголовков */
+.target-highlight {
+  animation: highlight-fade 2s ease-out;
+}
+
+@keyframes highlight-fade {
+  0% {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  100% {
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+/* Улучшения для таблиц */
+.markdown-content table,
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--card);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.markdown-content th,
+.markdown-content td,
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.markdown-content th,
+th {
+  background-color: var(--muted);
+  font-weight: 600;
+  color: var(--foreground);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.markdown-content tbody tr:hover,
+tbody tr:hover {
+  background-color: var(--muted);
+  transition: background-color 0.2s ease;
+}
+
+.markdown-content tbody tr:last-child td,
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Улучшенная адаптивность таблиц */
+@media (max-width: 768px) {
+  .markdown-content table,
+  table {
+    font-size: 0.875rem;
+  }
+  
+  .markdown-content th,
+  .markdown-content td,
+  th,
+  td {
+    padding: 8px 12px;
+  }
+}
+
+/* Стили для callout блоков */
+.callout {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.callout:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .callout:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для Mermaid диаграмм */
+.mermaid-diagram {
+  background: var(--background);
+  overflow: hidden;
+}
+
+.mermaid-diagram svg {
+  overflow: visible;
+}
+
+.mermaid-diagram .node rect {
+  transition: all 0.2s ease;
+}
+
+.mermaid-diagram .node:hover rect {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+.mermaid-diagram .edge line {
+  transition: all 0.2s ease;
+}
+
+.mermaid-diagram .edge:hover line {
+  stroke-width: 3;
+  stroke: #3b82f6;
+}
+
+/* Улучшения для темной темы */
+.dark .mermaid-diagram .node rect {
+  fill: #1e40af;
+  stroke: #3b82f6;
+}
+
+.dark .mermaid-diagram .edge line {
+  stroke: #94a3b8;
+}
+
+.dark .mermaid-diagram .edge:hover line {
+  stroke: #60a5fa;
+}
+
+/* Стили для глобального режима редактирования */
+.admin-edit-mode {
+  position: relative;
+}
+
+/* Более специфичная подсветка редактируемых элементов */
+.admin-edit-mode h1:hover,
+.admin-edit-mode h2:hover,
+.admin-edit-mode h3:hover,
+.admin-edit-mode h4:hover,
+.admin-edit-mode h5:hover,
+.admin-edit-mode h6:hover,
+.admin-edit-mode p:hover,
+.admin-edit-mode .card:hover,
+.admin-edit-mode [data-section]:hover,
+.admin-edit-mode section:hover,
+.admin-edit-mode article:hover,
+.admin-edit-mode .content-block:hover,
+.admin-edit-mode .editable:hover {
+  outline: 2px dashed #ef4444;
+  outline-offset: 3px;
+  background-color: rgba(239, 68, 68, 0.05);
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Обеспечиваем правильное позиционирование для редактируемых элементов */
+.admin-edit-mode h1,
+.admin-edit-mode h2,
+.admin-edit-mode h3,
+.admin-edit-mode h4,
+.admin-edit-mode h5,
+.admin-edit-mode h6,
+.admin-edit-mode p,
+.admin-edit-mode .card,
+.admin-edit-mode [data-section],
+.admin-edit-mode section,
+.admin-edit-mode article,
+.admin-edit-mode .content-block,
+.admin-edit-mode .editable {
+  position: relative;
+}
+
+/* Темная тема для подсветки */
+.dark .admin-edit-mode h1:hover,
+.dark .admin-edit-mode h2:hover,
+.dark .admin-edit-mode h3:hover,
+.dark .admin-edit-mode h4:hover,
+.dark .admin-edit-mode h5:hover,
+.dark .admin-edit-mode h6:hover,
+.dark .admin-edit-mode p:hover,
+.dark .admin-edit-mode .card:hover,
+.dark .admin-edit-mode [data-section]:hover,
+.dark .admin-edit-mode section:hover,
+.dark .admin-edit-mode article:hover,
+.dark .admin-edit-mode .content-block:hover,
+.dark .admin-edit-mode .editable:hover {
+  outline-color: #f87171;
+  background-color: rgba(248, 113, 113, 0.1);
+}
+
+/* Стили для иконок редактирования */
+.admin-edit-icon {
+  font-family: system-ui, -apple-system, sans-serif;
+  user-select: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Убираем подсветку с элементов, которые не должны редактироваться */
+.admin-edit-mode .admin-edit-icon:hover,
+.admin-edit-mode button:hover,
+.admin-edit-mode input:hover,
+.admin-edit-mode textarea:hover,
+.admin-edit-mode select:hover,
+.admin-edit-mode nav:hover,
+.admin-edit-mode header:hover,
+.admin-edit-mode footer:hover {
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .admin-edit-mode h1:hover,
+  .admin-edit-mode h2:hover,
+  .admin-edit-mode h3:hover,
+  .admin-edit-mode h4:hover,
+  .admin-edit-mode h5:hover,
+  .admin-edit-mode h6:hover,
+  .admin-edit-mode p:hover,
+  .admin-edit-mode .card:hover {
+    outline-width: 1px;
+    outline-offset: 2px;
+  }
+}
+
+/* Анимация появления иконок редактирования */
+@keyframes editIconFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
+.admin-edit-icon {
+  animation: editIconFadeIn 0.2s ease-out;
+}
+
+/* Стили для расширенного редактора */
+.edit-tab-btn.active {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+/* Базовые анимации для редактируемых элементов */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+  40%, 43% { transform: translate3d(0, -30px, 0); }
+  70% { transform: translate3d(0, -15px, 0); }
+  90% { transform: translate3d(0,-4px,0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-fadeIn { animation: fadeIn 1s ease-in-out; }
+.animate-slideIn { animation: slideIn 1s ease-in-out; }
+.animate-bounce { animation: bounce 1s ease-in-out; }
+.animate-shake { animation: shake 1s ease-in-out; }
+.animate-pulse { animation: pulse 1s ease-in-out infinite; }
+
+/* Улучшения для диалоговых окон */
+[data-radix-dialog-content] {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Стили для уведомлений об ошибках */
+.error-alert {
+  border-color: var(--destructive);
+  background-color: rgba(244, 63, 94, 0.1);
+}
+
+.dark .error-alert {
+  background-color: rgba(244, 63, 94, 0.2);
+}
+
+.success-alert {
+  border-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.dark .success-alert {
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+/* Анимации для алертов */
+@keyframes slideInAlert {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.alert-animation {
+  animation: slideInAlert 0.3s ease-out;
+}
+
+/* Улучшения для форм */
+.form-input-error {
+  border-color: var(--destructive) !important;
+  box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.2) !important;
+}
+
+.form-input-error:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.3) !important;
+}
+
+/* Улучшения для select-компонентов */
+[data-radix-select-content] {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Улучшения для таблиц в контейнерах */
+.table-container {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.table-container table {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Стили для скролл-области */
+[data-radix-scroll-area-viewport] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-foreground) var(--muted);
+}
+
+[data-radix-scroll-area-viewport]::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-radix-scroll-area-viewport]::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+[data-radix-scroll-area-viewport]::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+[data-radix-scroll-area-viewport]::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
+
+/* Switch component additional styling */
+button[role="switch"] span {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark button[role="switch"] span {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Notification system styles */
+.notification-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.notification-new {
+  position: relative;
+}
+
+.notification-new::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 80%;
+  background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+}
+
+/* Notification popover improvements */
+[data-radix-popover-content] {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.dark [data-radix-popover-content] {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transitions for notification cards */
+.notification-card {
+  transition: all 0.2s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .notification-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Notification type colors */
+.notification-info {
+  border-left-color: #3b82f6;
+}
+
+.notification-warning {
+  border-left-color: #f59e0b;
+}
+
+.notification-success {
+  border-left-color: #10b981;
+}
+
+.notification-error {
+  border-left-color: #ef4444;
+}
+
+/* Improved badge appearance */
+.notification-type-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Animation for new notifications */
+@keyframes slideInNotification {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.notification-enter {
+  animation: slideInNotification 0.3s ease-out;
+}
+
+/* Dismiss button styling */
+.notification-dismiss-btn {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.notification-dismiss-btn:hover {
+  opacity: 1;
+}
+
+/* Popover animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(10px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-10px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(10px); }
+  to { transform: translateX(0); }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in-0 {
+  animation-name: fadeIn;
+  animation-duration: 200ms;
+}
+
+.zoom-in-95 {
+  animation-name: zoomIn;
+  animation-duration: 200ms;
+}
+
+.slide-in-from-top-2 {
+  animation-name: slideInFromTop;
+  animation-duration: 200ms;
+}
+
+.slide-in-from-bottom-2 {
+  animation-name: slideInFromBottom;
+  animation-duration: 200ms;
+}
+
+.slide-in-from-left-2 {
+  animation-name: slideInFromLeft;
+  animation-duration: 200ms;
+}
+
+.slide-in-from-right-2 {
+  animation-name: slideInFromRight;
+  animation-duration: 200ms;
+}

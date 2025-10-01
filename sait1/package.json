@@ -1,0 +1,50 @@
+
+  {
+      "name": "Создание сайта",
+      "version": "0.1.0",
+      "private": true,
+      "dependencies": {
+          "@jsr/supabase__supabase-js": "^2.49.8",
+          "@radix-ui/react-accordion": "*",
+          "@radix-ui/react-alert-dialog": "*",
+          "@radix-ui/react-context-menu": "*",
+          "@radix-ui/react-dropdown-menu": "*",
+          "@radix-ui/react-hover-card": "*",
+          "@radix-ui/react-label": "^2.1.2",
+          "@radix-ui/react-menubar": "*",
+          "@radix-ui/react-navigation-menu": "*",
+          "@radix-ui/react-radio-group": "*",
+          "@radix-ui/react-slider": "*",
+          "@radix-ui/react-slot": "^1.1.2",
+          "@radix-ui/react-toggle": "*",
+          "@radix-ui/react-toggle-group": "*",
+          "@supabase/supabase-js": "*",
+          "@vitejs/plugin-react": "*",
+          "class-variance-authority": "*",
+          "cmdk": "*",
+          "embla-carousel-react": "^8.6.0",
+          "hono": "*",
+          "input-otp": "^1.4.2",
+          "lucide-react": "^0.487.0",
+          "node:url": "*",
+          "path": "*",
+          "react": "^18.3.1",
+          "react-day-picker": "^8.10.1",
+          "react-dom": "^18.3.1",
+          "react-hook-form": "^7.55.0",
+          "react-resizable-panels": "^2.1.7",
+          "recharts": "^2.15.2",
+          "sonner": "*",
+          "vaul": "*",
+          "vite": "*"
+      },
+      "devDependencies": {
+          "@types/node": "^20.10.0",
+          "@vitejs/plugin-react-swc": "^3.10.2",
+          "vite": "6.3.5"
+      },
+      "scripts": {
+          "dev": "vite",
+          "build": "vite build"
+      }
+  }
