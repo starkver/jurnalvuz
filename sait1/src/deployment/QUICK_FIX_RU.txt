@@ -1,0 +1,66 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              БЫСТРОЕ ИСПРАВЛЕНИЕ ОШИБКИ APT SOURCES.LIST                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+ОШИБКА:
+  E: Type 'Types:' is not known on line 1 in source list /etc/apt/sources.list
+
+ПРИЧИНА:
+  Файл /etc/apt/sources.list использует неправильный формат (DEB822 вместо 
+  традиционного однострочного формата).
+
+БЫСТРОЕ РЕШЕНИЕ:
+  
+  1. Автоматическое исправление (РЕКОМЕНДУЕТСЯ):
+     
+     sudo bash deployment/fix-sources-format.sh
+     
+  2. После успешного исправления запустите:
+     
+     sudo bash deployment/deploy.sh
+
+РУЧНОЕ ИСПРАВЛЕНИЕ (если автоматическое не сработало):
+
+  1. Создайте резервную копию:
+     
+     sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+  
+  2. Узнайте версию Ubuntu:
+     
+     lsb_release -cs
+     
+     (Обычно: noble, jammy, focal)
+  
+  3. Отредактируйте файл:
+     
+     sudo nano /etc/apt/sources.list
+  
+  4. Замените всё содержимое на (замените 'noble' на вашу версию):
+     
+     deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
+     deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
+     deb http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse
+     deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+  
+  5. Сохраните (Ctrl+O, Enter, Ctrl+X)
+  
+  6. Проверьте:
+     
+     sudo apt clean
+     sudo apt update
+  
+  7. Запустите развертывание:
+     
+     sudo bash deployment/deploy.sh
+
+ДОПОЛНИТЕЛЬНАЯ ПОМОЩЬ:
+  
+  • Полная документация: deployment/TROUBLESHOOTING_RU.md
+  • Диагностика системы: sudo bash deployment/diagnose-system.sh
+  • Исправление репозиториев: sudo bash deployment/fix-repositories.sh
+
+ПРИМЕЧАНИЕ:
+  Формат DEB822 (Types:, URIs:, etc) работает ТОЛЬКО в файлах .sources
+  в директории /etc/apt/sources.list.d/, но НЕ в /etc/apt/sources.list
+
+═══════════════════════════════════════════════════════════════════════════════
